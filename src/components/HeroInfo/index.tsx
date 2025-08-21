@@ -1,19 +1,17 @@
 import Image from "next/image";
 import React from "react";
-import HeroImage from "../../../../public/hero.jpg";
+import HeroImage from "public/images/hero.jpg";
 
 const HeroInfo = () => {
   return (
     <div className="flex-1 border border-red-500 flex items-center justify-center gap-4">
-      <div className="flex-1">
+      <div className="flex-1 border border-green-500 text-center h-100%">
         <h1 className="text-4xl font-bold">Hi there! I&apos;m Sahil.</h1>
         <p>
-          I started building on the web in 2007 and never stopped. I’ve worked
-          in senior engineering positions at organizations like Gatsby (acq.
-          Netlify), DigitalOcean, and Khan Academy. I’ve also taught web
-          development fundamentals at Concordia University. These days, I&apos;m
-          a solo indie hacker focused on empowering up-and-coming software
-          developers.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+          temporibus corrupti labore dolore facilis magni esse laboriosam,
+          necessitatibus repudiandae harum voluptatibus velit perferendis a,
+          dicta est ratione, praesentium quidem quos?
         </p>
       </div>
       <div className="flex-1 border border-blue-500 text-center">

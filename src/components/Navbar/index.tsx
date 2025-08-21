@@ -1,6 +1,6 @@
 "use client";
-import DownloadResume from "../DownloadResume";
-import MoonIcon from "../../../../public/icons/moon.svg";
+import DownloadResume from "./DownloadResume";
+import MoonIcon from "public/icons/moon.svg";
 
 const Navbar = () => {
   return (
