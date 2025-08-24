@@ -2,16 +2,19 @@ import Blogs from "@/components/Blogs";
 import HeroInfo from "@/components/HeroInfo";
 import Projects from "@/components/Projects";
 import Journey from "@/components/Journey";
+import { fetchBlogsFromDevto } from "@/apis";
+import { transformBlogsResponse } from "@/utils/api";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const res = await fetchBlogsFromDevto();
+  const blogs = transformBlogsResponse(res);
+
   return (
     <>
       <HeroInfo />
-      <div className="grid grid-cols-3 gap-10 my-10">
-        <Projects />
-        <Journey />
-        <Blogs />
-      </div>
+      <Projects />
+      <Journey />
+      <Blogs blogs={blogs} />
     </>
   );
 }

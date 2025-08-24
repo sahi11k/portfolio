@@ -4,23 +4,24 @@ import { Blog } from "@/types";
 import ArrowIcon from "@/components/ArrowIcon";
 import Link from "next/link";
 
-interface BlogCardProps {
+interface BlogListItemProps {
   blog: Blog;
 }
 
-const BlogCard = ({ blog }: BlogCardProps) => {
+const BlogListItem = ({ blog }: BlogListItemProps) => {
   return (
-    <div className="flex-1 bg-neutral-100 p-6 flex flex-col gap-4 h-100">
-      <div className="relative h-50 overflow-hidden bg-black">
+    <div className="bg-neutral-100 flex-1 p-6 flex gap-5">
+      <div className="relative w-40 h-28 md:w-64 md:h-40 flex-shrink-0 overflow-hidden bg-black">
         <Image
           src={blog.image ?? ""}
           className="object-cover"
           alt={`Blog Hero Image on ${blog.title}`}
           fill
+          sizes="(max-width: 768px) 160px, 256px"
         />
       </div>
-      <div className="flex-1 flex flex-col gap-2 text-center">
-        <div className="flex gap-2 text-neutral-400 text-sm font-semibold">
+      <div className="flex-8 flex flex-col gap-2 text-center">
+        <div className="flex gap-2 text-neutral-500 text-sm font-semibold">
           <span>{blog.publishedAt.toLocaleDateString()}</span>
           <span>•</span>
           <span>{blog.readingTimeMinutes} min read</span>
@@ -32,7 +33,6 @@ const BlogCard = ({ blog }: BlogCardProps) => {
             className="flex hover:underline"
           >
             <h1 className="text-lg font-bold">{blog.title}</h1>
-            <ArrowIcon className="stroke-2 flex-shrink-0 pt-1 ml-auto" />
           </Link>
           <p className="text-sm">{blog.description}</p>
         </div>
@@ -40,7 +40,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
           {blog?.tagList?.map((tag) => (
             <span
               key={tag}
-              className="text-xs font-semibold text-neutral-600 bg-neutral-200 text-neutral-500 py-1 px-2"
+              className="text-xs font-semibold bg-neutral-200 text-neutral-500 py-1 px-2"
             >
               {tag}
             </span>
@@ -51,4 +51,4 @@ const BlogCard = ({ blog }: BlogCardProps) => {
   );
 };
 
-export default BlogCard;
+export default BlogListItem;

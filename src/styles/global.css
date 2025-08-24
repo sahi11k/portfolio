@@ -1,13 +1,6 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap");
 @import "tailwindcss";
 
-@theme {
-  --color-text: #e3e6e8;
-  --color-background: #0d0f12;
-  --color-card-bg: #1b2532;
-}
-
-@layer components {
-  .card {
-    @apply bg-card-bg rounded-2xl p-4 min-h-100;
-  }
+:root {
+  --font-satoshi: "Satoshi", sans-serif;
 }
