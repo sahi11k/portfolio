@@ -1,41 +1,66 @@
 "use client";
 
 import React from "react";
-// import Location from "./Location";
 import { SOCIALS } from "./data";
-import Link from "next/link";
+
+import { useEffect, useState } from "react";
+
+const DARK = "dark";
+const LIGHT = "light";
+
+import Button from "../Button";
+import SunIcon from "public/icons/sun.svg";
 import MoonIcon from "public/icons/moon.svg";
 
 const Footer = () => {
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const systemPref = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const isDark = stored === DARK || (!stored && systemPref);
+    setDark(isDark);
+    document.documentElement.classList.toggle(DARK, isDark);
+  }, []);
+
+  function toggleTheme() {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle(DARK, next);
+    localStorage.setItem("theme", next ? DARK : LIGHT);
+  }
+
   return (
-    <footer className="flex flex-col bg-neutral-100 px-[15%] gap-4">
-      <div className="flex justify-center py-16">
-        {/* <Location /> */}
+    <footer className="flex flex-col px-[12.5%] gap-4 bg-bg-footer">
+      <div className="py-16">
         <div className="text-center">
-          <div>Have a project in mind?</div>
-          <div className="uppercase text-8xl font-semibold">
+          <div className="text-2xl mb-3">Have a project in mind?</div>
+          <h1 className="uppercase text-9xl font-medium text-text-muted">
             Let&apos;s Talk
-          </div>
+          </h1>
         </div>
       </div>
-      <div className="flex justify-between py-8 border-t">
-        <div>&copy;{new Date().getFullYear()} Sahil Kumar</div>
+
+      <div className="flex items-center justify-between py-8 border-t border-text-muted text-text-muted">
+        <div className="text-xl">
+          &copy;{new Date().getFullYear()} Sahil Kumar
+        </div>
         <div className="flex gap-10">
-          {/* <MoonIcon stroke="currentColor" /> */}
+          <Button variant="icon" onClick={toggleTheme}>
+            {dark ? <MoonIcon /> : <SunIcon />}
+          </Button>
           {SOCIALS.map((footerItem) => {
             return (
-              <Link
+              <Button
+                variant="icon"
                 href={footerItem.link}
                 key={footerItem.name}
-                target="_blank"
+                className="h-8 w-8"
               >
-                <span
-                  key={footerItem.name}
-                  className="h-6 w-6 flex items-center justify-center overflow-hidden  cursor-pointer"
-                >
-                  {footerItem.icon}
-                </span>
-              </Link>
+                {footerItem.icon}
+              </Button>
             );
           })}
         </div>

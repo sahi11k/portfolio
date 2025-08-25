@@ -5,19 +5,18 @@ import Button from "../Button";
 
 const HeroInfo = () => {
   return (
-    <div className="flex justify-center items-center flex-col min-h-[calc(100vh-80px)]">
-      <h1 className="text-center text-8xl font-bold mb-10 leading-xs">
-        Namaste, I&apos;m <span className="text-neutral-400">Sahil.</span>{" "}
-        <br />
-        Frontend Engineer.
+    <div className="flex gap-12 justify-center items-center flex-col min-h-[calc(100vh-100px)]">
+      <h1 className="text-center text-9xl font-medium leading-none">
+        Namaste, I&apos;m Sahil. <br />
+        <span className="text-text-muted">Frontend Engineer.</span>
       </h1>
-      <p className="text-xl leading-relaxed w-[70%] text-center">
+      <p className="text-2xl leading-relaxed text-center tracking-wide w-[75%] font-light">
         I love building for the web, and for the past 3+ years I&apos;ve been
         working at PlaySimple Games, where I focus on crafting scalable and
         powerful data visualization solutions. Outside of work, I enjoy
         photography and trekking.
       </p>
-      <div className="flex gap-4 mt-6">
+      <div className="flex gap-6">
         <Button
           variant="secondary"
           onClick={() =>
@@ -28,12 +27,7 @@ const HeroInfo = () => {
         >
           View Projects
         </Button>
-        <Button
-          variant="primary"
-          onClick={() => (window.location.href = "mailto:youremail@gmail.com")}
-        >
-          Hire Me
-        </Button>
+        <Button href="mailto:sahil511kumar@gmail.com">Hire Me</Button>
       </div>
     </div>
   );

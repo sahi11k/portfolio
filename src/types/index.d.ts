@@ -13,6 +13,7 @@ export type Project = {
 
 export type Journey = {
   id: number;
+  type: "work" | "education";
   time: string;
   title: string;
   description?: string;

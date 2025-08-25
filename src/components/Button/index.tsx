@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
-  variant?: "primary" | "secondary" | "text";
+  variant?: "primary" | "secondary" | "text" | "icon";
   size?: "sm" | "md" | "lg";
   className?: string;
   href?: string; // for link buttons
@@ -11,10 +11,11 @@ interface ButtonProps {
 }
 
 const variantClasses = {
-  primary: "bg-black text-white shadow-md hover:bg-neutral-800",
+  primary: "bg-text-base text-bg-surface hover:opacity-70",
   secondary:
-    "bg-white text-neutral-900 border border-neutral-300 hover:bg-neutral-100",
-  text: "bg-transparent text-neutral-900 hover:opacity-50 transition-opacity",
+    "bg-transparent border-[1.5px] border-text-muted text-text-muted hover:text-text-base hover:border-text-base",
+  text: "bg-transparent text-text-base underline underline-offset-8",
+  icon: "bg-transparent text-text-muted hover:text-text-base !p-0",
 };
 
 const sizeClasses = {
@@ -33,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
 }) => {
   const baseClasses =
-    "text-base font-medium transition-all flex items-center justify-center gap-1 cursor-pointer";
+    "text-base text-xl rounded-full font-medium transition-all flex items-center justify-center gap-1 cursor-pointer duration-300";
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 

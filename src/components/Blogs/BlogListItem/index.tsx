@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Blog } from "@/types";
 import ArrowIcon from "@/components/ArrowIcon";
-import Link from "next/link";
+import Button from "@/components/Button";
 
 interface BlogListItemProps {
   blog: Blog;
@@ -10,41 +10,39 @@ interface BlogListItemProps {
 
 const BlogListItem = ({ blog }: BlogListItemProps) => {
   return (
-    <div className="bg-neutral-100 flex-1 p-6 flex gap-5">
-      <div className="relative w-40 h-28 md:w-64 md:h-40 flex-shrink-0 overflow-hidden bg-black">
-        <Image
-          src={blog.image ?? ""}
-          className="object-cover"
-          alt={`Blog Hero Image on ${blog.title}`}
-          fill
-          sizes="(max-width: 768px) 160px, 256px"
-        />
+    <div className="flex min-h-80 bg-bg-container p-12 gap-24 rounded-4xl">
+      <div className="flex-6 flex flex-col justify-between gap-24">
+        <div>
+          <div className="text-4xl font-semibold mb-6">{blog.title}</div>
+          <div className="leading-relaxed text-2xl tracking-wide font-light">
+            {blog.description}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center text-lg">
+            {blog.tagList?.map((stack, idx) => (
+              <React.Fragment key={stack}>
+                <span className="text-text-muted">{stack}</span>
+                {idx < (blog.tagList?.length ?? 0) - 1 && (
+                  <span className="mx-2 text-text-muted">•</span>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-start gap-6">
+          <Button variant="primary" href={blog.link}>
+            Read Full Article <ArrowIcon />
+          </Button>
+        </div>
       </div>
-      <div className="flex-8 flex flex-col gap-2 text-center">
-        <div className="flex gap-2 text-neutral-500 text-sm font-semibold">
-          <span>{blog.publishedAt.toLocaleDateString()}</span>
-          <span>•</span>
-          <span>{blog.readingTimeMinutes} min read</span>
-        </div>
-        <div className="flex-1 flex flex-col gap-2 text-left">
-          <Link
-            href={blog.link}
-            target="_blank"
-            className="flex hover:underline"
-          >
-            <h1 className="text-lg font-bold">{blog.title}</h1>
-          </Link>
-          <p className="text-sm">{blog.description}</p>
-        </div>
-        <div className="flex gap-2 flex-wrap">
-          {blog?.tagList?.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs font-semibold bg-neutral-200 text-neutral-500 py-1 px-2"
-            >
-              {tag}
-            </span>
-          ))}
+      <div className="flex-4 self-center">
+        <div className="relative h-80 overflow-hidden rounded-2xl">
+          <Image
+            src={blog.image ?? ""}
+            alt={blog.title ?? "blog screenshot"}
+            fill
+            className="object-cover object-center"
+          />
         </div>
       </div>
     </div>

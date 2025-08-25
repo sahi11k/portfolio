@@ -14,12 +14,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between bg-white sticky top-0 z-10 h-[80px]">
+    <nav className="flex items-center justify-between sticky top-0 z-10 h-[100px] bg-bg-surface">
       <Link href="/">
-        <div className="text-4xl">sk.</div>
+        <div className="text-4xl">sahilk.</div>
       </Link>
-      <div className="flex items-center gap-4">
-        <Button onClick={handleResumeDownload}>Download CV </Button>
+      <div className="flex items-center gap-2">
+        <Button variant="primary" onClick={handleResumeDownload}>
+          Download CV
+        </Button>
       </div>
     </nav>
   );

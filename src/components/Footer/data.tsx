@@ -22,7 +22,7 @@ export const SOCIALS = [
   },
   {
     name: "x",
-    icon: <X stroke="currentColor" />,
+    icon: <X fill="currentColor" />,
     link: "https://x.com/sahi11k",
   },
   {

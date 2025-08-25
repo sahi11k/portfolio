@@ -14,21 +14,20 @@ const featuredProjects = PROJECTS.filter((project) => project.featured).sort(
 const Projects = () => {
   return (
     <>
-      <div id="projects" className="h-20" />
-      <div className="col-span-4 row-start-1 mt-[-80px]">
-        <div className="flex flex-col gap-2 pb-12">
-          <h1 className="font-semibold text-center">Portfolio</h1>
-          <p className="text-center text-4xl font-semibold">
+      <div className="col-span-4 row-start-1 pt-24" id="projects">
+        <div className="flex flex-col gap-6 pb-12">
+          <h1 className="text-center text-2xl tracking-wide">Projects</h1>
+          <p className="text-center text-6xl font-medium">
             Work and experiments that blend <br />
-            <span className="text-neutral-400">Design & Engineering</span>
+            <span className="text-text-muted">Design & Engineering</span>
           </p>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-12">
           {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} showCode={false} />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-12">
           <Link href="/projects">
             <Button variant="primary">
               All Projects <ArrowUpright />

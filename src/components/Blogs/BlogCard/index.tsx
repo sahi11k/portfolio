@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Blog } from "@/types";
 import ArrowIcon from "@/components/ArrowIcon";
-import Link from "next/link";
+import Button from "@/components/Button";
 
 interface BlogCardProps {
   blog: Blog;
@@ -10,8 +10,8 @@ interface BlogCardProps {
 
 const BlogCard = ({ blog }: BlogCardProps) => {
   return (
-    <div className="flex-1 bg-neutral-100 p-6 flex flex-col gap-4 h-100">
-      <div className="relative h-50 overflow-hidden bg-black">
+    <div className="flex-1 bg-bg-container p-6 flex flex-col gap-6 rounded-4xl tracking-wide">
+      <div className="relative h-60 overflow-hidden rounded-2xl">
         <Image
           src={blog.image ?? ""}
           className="object-cover"
@@ -19,32 +19,32 @@ const BlogCard = ({ blog }: BlogCardProps) => {
           fill
         />
       </div>
-      <div className="flex-1 flex flex-col gap-2 text-center">
-        <div className="flex gap-2 text-neutral-400 text-sm font-semibold">
+      <div className="flex-1 flex flex-col gap-1 text-center">
+        <div className="flex gap-2 text-text-muted">
           <span>{blog.publishedAt.toLocaleDateString()}</span>
           <span>•</span>
           <span>{blog.readingTimeMinutes} min read</span>
         </div>
-        <div className="flex-1 flex flex-col gap-2 text-left">
-          <Link
-            href={blog.link}
-            target="_blank"
-            className="flex hover:underline"
-          >
-            <h1 className="text-lg font-bold">{blog.title}</h1>
-            <ArrowIcon className="stroke-2 flex-shrink-0 pt-1 ml-auto" />
-          </Link>
-          <p className="text-sm">{blog.description}</p>
+        <div className="flex-1 flex flex-col gap-3 text-left">
+          <h1 className="text-2xl font-semibold break-words">{blog.title}</h1>
+          <p className="text-lg font-light">{blog.description}</p>
         </div>
-        <div className="flex gap-2 flex-wrap">
-          {blog?.tagList?.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs font-semibold text-neutral-600 bg-neutral-200 text-neutral-500 py-1 px-2"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="flex justify-between items-center mt-3">
+          <div className="flex-1 flex flex-wrap">
+            {blog?.tagList?.map((tag, index) => (
+              <span key={tag} className="flex items-center text-text-muted">
+                {index > 0 && <span className="mx-2">•</span>}
+                <span>{tag}</span>
+              </span>
+            ))}
+          </div>
+          <Button
+            variant="secondary"
+            className="rounded-full !p-3 !bg-bg-container"
+            href={blog.link}
+          >
+            <ArrowIcon className="stroke-[1.25px]" />
+          </Button>
         </div>
       </div>
     </div>

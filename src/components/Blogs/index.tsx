@@ -13,19 +13,19 @@ const Blogs = ({ blogs }: { blogs: Blog[] }) => {
 
   return (
     <div className="col-span-4">
-      <div className="flex flex-col gap-2 pb-12">
-        <h1 className="font-semibold text-center">Writings</h1>
-        <p className="text-center text-4xl font-semibold">
+      <div className="flex flex-col gap-6 pb-12">
+        <h1 className="text-center text-2xl tracking-wide">Blogs</h1>
+        <p className="text-center text-6xl font-medium">
           Learnings and explorations on <br />
-          <span className="text-neutral-400">the Modern Web</span>.
+          <span className="text-text-muted">the Modern Web</span>.
         </p>
       </div>
-      <div className="flex gap-5">
+      <div className="flex gap-8">
         {featuredBlogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-12">
         <Link href="/blogs">
           <Button variant="primary">
             All Blogs <ArrowUpright />

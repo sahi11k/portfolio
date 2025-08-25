@@ -3,46 +3,34 @@ import { Journey } from "@/types";
 export const JOURNEY: Journey[] = [
   {
     id: 1,
+    type: "work",
     time: "Present",
     title: "Software Engineer (Frontend) at PlaySimple Games",
     description:
-      "Working on building fast, scalable dashboards and advanced data visualizations that power business decision-making at PlaySimple Games.",
-    highlights: [
-      "Developed multi-visualization dashboards to analyze player data effectively",
-      "Migrated internal dashboard platform from CRA to Vite, improving performance and developer experience",
-    ],
-    images: ["/images/dashboard.png", "/images/chart.png"],
+      "Building fast, scalable dashboards and advanced data visualizations that support business decisions. Created multi-visualization dashboards and migrated the internal platform from CRA to Vite for better speed and developer experience.",
   },
   {
     id: 2,
+    type: "work",
     time: "August 2023",
     title: "Promoted to Software Engineer (Frontend)",
     description:
-      "Transitioned from Associate Engineer to Software Engineer, taking ownership of larger features and architecture improvements.",
-    highlights: [
-      "Refactored large parts of the codebase and standardized Redux state management",
-      "Enhanced debugging by integrating source maps into Sentry and introducing unit tests",
-    ],
+      "Took on bigger responsibilities in feature delivery and system design. Refactored large parts of the codebase, standardized Redux state, and improved monitoring with source maps in Sentry and unit tests.",
   },
   {
     id: 3,
+    type: "education",
     time: "July 2022",
     title: "Graduated in Computer Science and Engineering",
-    highlights: [
-      "Earned a B.Tech in Computer Science and Engineering from DIT University",
-      "Graduated with a CGPA of 8.44/10",
-    ],
+    description:
+      "Completed B.Tech in Computer Science and Engineering from DIT University with a CGPA of 8.44/10. Built a strong foundation in software development and problem solving.",
   },
   {
     id: 4,
+    type: "work",
     time: "June 2022",
-    title: "Full-Time Conversion",
+    title: "Full-Time Conversion at PlaySimple Games",
     description:
-      "Converted from intern to Associate Software Engineer (Frontend) after a year long successful internship at PlaySimple Games.",
-    highlights: [
-      "Built a Player Profiler tool — my first major production project",
-      "Implemented a global search bar powered by Elasticsearch",
-    ],
-    images: ["/images/gui.png", "/images/searchbar.png"],
+      "Converted from intern to Associate Software Engineer (Frontend) after a year-long internship. Delivered my first production project, a Player Profiler tool, and implemented a global search bar using Elasticsearch.",
   },
 ];

@@ -6,43 +6,47 @@ import Button from "@/components/Button";
 
 interface ProjectCardProps {
   project: Project;
-  showCode?: boolean;
 }
 
-const ProjectCard = ({ project, showCode = true }: ProjectCardProps) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div className="flex min-h-80 bg-neutral-100 p-10 gap-16">
-      <div className="flex-6 flex flex-col justify-between gap-5">
-        <div>
-          <div className="text-3xl font-bold mb-3">{project.title}</div>
-          <div className="leading-relaxed">{project.description}</div>
-          {showCode && (
-            <div className="mt-3">
-              <span className="font-semibold">Stack : </span>
-              <span className="text-neutral-500">
-                {project.stack?.join(", ")}
-              </span>
-            </div>
-          )}
+    <div className="flex min-h-80 bg-bg-container p-12 gap-24 rounded-4xl">
+      <div className="flex-6 flex flex-col justify-between gap-12">
+        <div className="flex flex-col gap-6">
+          <div className="text-4xl font-semibold">{project.title}</div>
+          <div className="leading-relaxed text-2xl tracking-wide font-light">
+            {project.description}
+          </div>
+
+          <div className="flex flex-wrap items-center text-lg">
+            {project.stack?.map((stack, idx) => (
+              <React.Fragment key={stack}>
+                <span className="text-text-muted">{stack}</span>
+                {idx < (project.stack?.length ?? 0) - 1 && (
+                  <span className="mx-2 text-text-muted">•</span>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-        <div className="flex justify-start gap-4">
+        <div className="flex justify-start gap-6">
           {project.github && (
-            <Button variant="secondary" href={project.github} size="sm">
+            <Button variant="secondary" href={project.github}>
               View Code <ArrowUpright />
             </Button>
           )}
-          <Button variant="primary" href={project.link} size="sm">
+          <Button variant="primary" href={project.link}>
             Live Demo <ArrowUpright />
           </Button>
         </div>
       </div>
-      <div className="flex-4 border">
-        <div className="relative h-70 overflow-hidden bg-neutral-900">
+      <div className="flex-4 self-center">
+        <div className="relative h-80 overflow-hidden rounded-2xl">
           <Image
             src={project.image ?? ""}
             alt={project.alt ?? "project screenshot"}
-            className="object-cover"
             fill
+            className="object-cover object-center"
           />
         </div>
       </div>
