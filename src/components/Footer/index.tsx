@@ -36,9 +36,9 @@ const Footer = () => {
     <footer className="flex flex-col px-[12.5%] gap-4 bg-bg-footer">
       <div className="py-16">
         <div className="text-center">
-          <div className="text-2xl mb-3">Have a project in mind?</div>
-          <h1 className="uppercase text-9xl font-medium text-text-muted">
-            Let&apos;s Talk
+          <div className="text-2xl mb-3">Have an idea or opportunity?</div>
+          <h1 className="text-9xl font-medium text-text-muted">
+            Let&apos;s Connect
           </h1>
         </div>
       </div>

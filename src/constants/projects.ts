@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     rank: 1,
     alt: "Kaizen productivity app dashboard",
-    stack: ["React", "Supabase", "Radix UI", "Chart.js", "Vite"],
+    stack: ["React", "Supabase", "Chart.js", "Vite"],
   },
   {
     id: "lyricsFinder",

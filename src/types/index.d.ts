@@ -11,14 +11,15 @@ export type Project = {
   stack?: string[];
 };
 
-export type Journey = {
+export type Highlights = {
   id: number;
   type: "work" | "education";
   time: string;
   title: string;
   description?: string;
   highlights?: string[];
-  images?: string[];
+  image?: string;
+  alt?: string;
 };
 
 export type Blog = {
