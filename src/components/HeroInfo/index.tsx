@@ -11,7 +11,7 @@ const HeroInfo = () => {
   };
   return (
     <>
-      <div className="flex gap-6 md:gap-9 xl:gap-12 justify-center items-center flex-col  min-h-[calc(100vh-70px)] lg:min-h-[calc(100vh-100px)]">
+      <div className="flex gap-6 md:gap-9 xl:gap-12 justify-center items-center flex-col min-h-[calc(100vh-84px)] lg:min-h-[calc(100vh-96px)]">
         <h1 className="text-center text-5xl md:text-7xl xl:text-9xl font-medium leading-none flex flex-col">
           <span>Namaste, I&apos;m Sahil.</span>
           <span className="text-text-muted">Frontend Engineer.</span>
@@ -29,7 +29,7 @@ const HeroInfo = () => {
           <Button href="mailto:sahil511kumar@gmail.com">Hire Me</Button>
         </div>
       </div>
-      <div ref={projectsRef} />
+      <div ref={projectsRef} className="mt-[-96px]" />
     </>
   );
 };
