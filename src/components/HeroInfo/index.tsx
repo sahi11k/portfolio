@@ -29,7 +29,7 @@ const HeroInfo = () => {
           <Button href="mailto:sahil511kumar@gmail.com">Hire Me</Button>
         </div>
       </div>
-      <div ref={projectsRef} className="mt-[-70px] lg:mt-[-100px]" />
+      <div ref={projectsRef} />
     </>
   );
 };

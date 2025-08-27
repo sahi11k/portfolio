@@ -14,14 +14,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between bg-bg-surface/80 backdrop-blur supports-[backdrop-filter]:bg-bg-surface/60 sticky top-0 z-10 h-[70px] lg:h-[100px]">
-      <Link href="/">
-        <div className="text-2xl md:text-3xl xl:text-4xl">sahilk.</div>
-      </Link>
-      <div className="flex items-center gap-2">
-        <Button variant="primary" onClick={handleResumeDownload}>
-          Download CV
-        </Button>
+    <nav className="bg-bg-surface/80 backdrop-blur supports-[backdrop-filter]:bg-bg-surface/60 sticky top-0 z-10 h-[84px] lg:h-[96px]">
+      <div className="w-[90%] max-w-7xl mx-auto flex items-center justify-between h-full">
+        <Link href="/">
+          <div className="text-2xl md:text-3xl xl:text-4xl">sahilk.</div>
+        </Link>
+        <div className="flex items-center gap-2">
+          <Button variant="primary" onClick={handleResumeDownload}>
+            Download CV
+          </Button>
+        </div>
       </div>
     </nav>
   );
