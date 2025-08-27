@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ProjectsPage() {
   return (
     <div>
-      <div className="flex flex-col gap-6 pb-12 relative">
+      <div className="relative flex items-center justify-center mb-6 xl:mb-12">
         <Link href="/">
           <Button
             variant="icon"
@@ -16,12 +16,11 @@ export default function ProjectsPage() {
             <ArrowIcon direction="left" /> Back
           </Button>
         </Link>
-        <h1 className="text-center text-2xl tracking-wide">Projects</h1>
-        <p className="text-center text-6xl font-medium">
-          All Projects <span className="text-text-muted">Catalog</span>
-        </p>
+        <h1 className="font-medium text-2xl md:text-4xl xl:text-6xl">
+          Project <span className="text-text-muted">Archive</span>
+        </h1>
       </div>
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-6 md:gap-12">
         {PROJECTS.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

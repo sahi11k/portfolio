@@ -10,7 +10,7 @@ interface BlogCardProps {
 
 const BlogCard = ({ blog }: BlogCardProps) => {
   return (
-    <div className="flex-1 bg-bg-container p-6 flex flex-col gap-6 rounded-4xl tracking-wide">
+    <div className="bg-bg-container p-6 flex flex-col gap-6 rounded-4xl tracking-wide w-full md:w-100">
       <div className="relative h-60 overflow-hidden rounded-2xl">
         <Image
           src={blog.image ?? ""}
@@ -20,19 +20,24 @@ const BlogCard = ({ blog }: BlogCardProps) => {
         />
       </div>
       <div className="flex-1 flex flex-col gap-1 text-center">
-        <div className="flex gap-2 text-text-muted">
+        <div className="flex gap-2 text-text-muted text-sm lg:text-base">
           <span>{blog.publishedAt.toLocaleDateString()}</span>
           <span>•</span>
           <span>{blog.readingTimeMinutes} min read</span>
         </div>
         <div className="flex-1 flex flex-col gap-3 text-left">
-          <h1 className="text-2xl font-semibold break-words">{blog.title}</h1>
-          <p className="text-lg font-light">{blog.description}</p>
+          <h1 className="text-xl lg:text-2xl font-semibold break-words">
+            {blog.title}
+          </h1>
+          <p className="text-base lg:text-lg font-light">{blog.description}</p>
         </div>
         <div className="flex justify-between items-center mt-3">
           <div className="flex-1 flex flex-wrap">
             {blog?.tagList?.map((tag, index) => (
-              <span key={tag} className="flex items-center text-text-muted">
+              <span
+                key={tag}
+                className="flex items-center text-text-muted text-sm lg:text-base"
+              >
                 {index > 0 && <span className="mx-2">•</span>}
                 <span>{tag}</span>
               </span>

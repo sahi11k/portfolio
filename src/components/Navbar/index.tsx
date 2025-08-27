@@ -14,9 +14,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between sticky top-0 z-10 h-[100px] bg-bg-surface">
+    <nav className="flex items-center justify-between bg-bg-surface/80 backdrop-blur supports-[backdrop-filter]:bg-bg-surface/60 sticky top-0 z-10 h-[70px] lg:h-[100px]">
       <Link href="/">
-        <div className="text-4xl">sahilk.</div>
+        <div className="text-2xl md:text-3xl xl:text-4xl">sahilk.</div>
       </Link>
       <div className="flex items-center gap-2">
         <Button variant="primary" onClick={handleResumeDownload}>

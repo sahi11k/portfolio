@@ -33,21 +33,23 @@ const Footer = () => {
   }
 
   return (
-    <footer className="flex flex-col px-[12.5%] gap-4 bg-bg-footer">
-      <div className="py-16">
+    <footer className="flex flex-col bg-bg-footer text-text-muted">
+      <div className="py-16 mx-auto w-[90%] max-w-7xl">
         <div className="text-center">
-          <div className="text-2xl mb-3">Have an idea or opportunity?</div>
-          <h1 className="text-9xl font-medium text-text-muted">
+          <div className="text-lg md:text-xl xl:text-2xl mb-3 text-text-base">
+            Have an idea or opportunity?
+          </div>
+          <h1 className="text-5xl md:text-7xl xl:text-9xl font-medium">
             Let&apos;s Connect
           </h1>
         </div>
       </div>
-
-      <div className="flex items-center justify-between py-8 border-t border-text-muted text-text-muted">
-        <div className="text-xl">
+      <hr className="border-text-muted" />
+      <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-center justify-between py-8 mx-auto w-[90%] max-w-7xl">
+        <div className="text-lg md:text-xl xl:text-2xl">
           &copy;{new Date().getFullYear()} Sahil Kumar
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-5 md:gap-10">
           <Button variant="icon" onClick={toggleTheme}>
             {dark ? <MoonIcon /> : <SunIcon />}
           </Button>

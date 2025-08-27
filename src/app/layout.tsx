@@ -17,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body className="font-sans bg-bg-surface text-text-base">
-        <div className="flex flex-col min-h-screen max-w-[75%] m-auto">
+        <div className="flex flex-col min-h-screen mx-auto w-[90%] max-w-7xl relative">
           <Navbar />
-          <main className="flex-1 flex flex-col gap-24 mb-24">{children}</main>
+          <main className="flex-1 flex flex-col gap-6 mb-6 md:mb-12 md:gap-12 xl:gap-24 xl:mb-24">
+            {children}
+          </main>
         </div>
         <Footer />
       </body>
