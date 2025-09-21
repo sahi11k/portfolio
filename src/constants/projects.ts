@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     description:
       "A personal growth app designed to help users stay productive and mindful. Kaizen combines Pomodoro timers, journaling, and insightful analytics to track habits, time spent, and progress over time — making productivity measurable and sustainable.",
     image: "/images/kaizen.png",
-    link: "https://daily-kaizen.vercel.app/",
+    link: "https://gokaizen.app/",
     github: "",
     featured: true,
     rank: 1,
