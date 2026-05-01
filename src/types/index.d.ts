@@ -11,6 +11,18 @@ export type Project = {
   stack?: string[];
 };
 
+export type ProfileContent = {
+  siteTitle: string;
+  metadataDescription: string;
+  name: string;
+  heroGreeting: string;
+  heroRole: string;
+  heroBio: string;
+  email: string;
+  resumeUrl: string;
+  resumeButtonLabel: string;
+};
+
 export type Highlights = {
   id: number;
   type: "work" | "education";

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { SOCIALS } from "./data";
+import { PROFILE } from "@/content";
 
 import { useEffect, useState } from "react";
 
@@ -47,7 +48,7 @@ const Footer = () => {
       <hr className="border-text-muted" />
       <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-center justify-between py-8 mx-auto w-[90%] max-w-7xl">
         <div className="text-lg md:text-xl xl:text-2xl">
-          &copy;{new Date().getFullYear()} Sahil Kumar
+          &copy;{new Date().getFullYear()} {PROFILE.name}
         </div>
         <div className="flex gap-5 md:gap-10">
           <Button variant="icon" onClick={toggleTheme}>

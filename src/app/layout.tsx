@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { PROFILE } from "@/content";
 import "@styles/global.css";
 
 export const metadata: Metadata = {
-  title: "sahilk.",
-  description: "Sahil Kumar's Personal Website",
+  title: PROFILE.siteTitle,
+  description: PROFILE.metadataDescription,
 };
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { PROJECTS } from "@/constants/projects";
+import { PROJECTS } from "@/content";
 import Section from "../Section";
 
 const featuredProjects = PROJECTS.filter((project) => project.featured).sort(

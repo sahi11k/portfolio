@@ -1,7 +1,7 @@
 import ArrowIcon from "@/components/ArrowIcon";
 import Button from "@/components/Button";
 import ProjectCard from "@/components/Projects/ProjectCard";
-import { PROJECTS } from "@/constants/projects";
+import { PROJECTS } from "@/content";
 import Link from "next/link";
 
 export default function ProjectsPage() {

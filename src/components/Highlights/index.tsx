@@ -1,5 +1,5 @@
 import React from "react";
-import { HIGHLIGHTS } from "@/constants/highlights";
+import { HIGHLIGHTS } from "@/content";
 import HighlightCard from "./HighlightCard";
 import Section from "../Section";
 
